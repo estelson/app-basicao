@@ -18,8 +18,7 @@ export class CadastroPage implements OnInit {
   }
 
   async sendForm(f: NgForm) {
-    const message = 'Contato: ' + this.contactField +
-                    '<br>Mensagem:' + this.messageField;
+    const message = 'Contato: ' + this.contactField + '<br>Mensagem:' + this.messageField;
 
     const alert = await this.alertController.create({
       header: 'Alerta!',
