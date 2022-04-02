@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,14 @@ import { Injectable } from '@angular/core';
 
 export class HelperService {
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController,
+    private alertController: AlertController
+  ) { }
+
+  goHome() {
+    this.navCtrl.navigateRoot('/home');
+  }
 
   /**
    * Função que recebe os parâmetros passados pela URL do app
@@ -16,6 +24,16 @@ export class HelperService {
     if(urlParameterName = (new RegExp("[?&]" + encodeURIComponent(urlParameterName) + "=([^&]*)")).exec(location.search)) {
       return decodeURIComponent(urlParameterName[1]);
     }
+  }
+
+  async presentAlert(message) {
+    const alert = await this.alertController.create({
+      header: '',
+      subHeader: '',
+      message,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 
 }

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="assets/icon/EJL_Logo.png" alt="Logo do App"></ion-img>
+  <br><br>
+
+  <form #f="ngForm" class="form" (submit)="validLogin(f)">
+    <ion-input type="text" name="email" minlength="3" [(ngModel)]="email" required placeholder="Digite seu e-mail"></ion-input>
+
+    <ion-input type="password" name="password" minlength="6" [(ngModel)]="password" required placeholder="Senha"></ion-input>
+
+    <button type="submit" class="btn-login" name="buttonLogin">LOGAR</button>
+  </form>
+</ion-content>

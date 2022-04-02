@@ -17,6 +17,8 @@ const firebaseConfig = {
   appId: "1:253214186691:web:959c124bf99139c740d676"
 }
 
+console.log("Environment criada");
+
 const app = initializeApp(firebaseConfig);
 
 
